@@ -75,7 +75,7 @@
         </form>
     </div>
 
-    <!-- <script>
+    <script>
         const formulario = document.getElementById('formulario');
         const inputs = document.querySelectorAll('#formulario input');
 
@@ -87,25 +87,23 @@
             telefono: /^\d{7,14}$/ // 7 a 14 numeros.
         }
 
+        const campos ={
+            nombre: false,
+            correo: false,
+            telefono: false
+        }
+
 
         const validarFormulario = (e) => {
             switch (e.target.id) {
                 case "nombre":
-                    if(expresiones.usuario.test(e.target.value)){
-                        document.getElementById('grupo__nombre').classList.remove('formulario__grupo-incorrecto');
-                        document.getElementById('grupo__nombre').classList.add('formulario__grupo-formulario__grupo-correcto');
-
-                    }else{
-                        document.getElementById('grupo__nombre').classList.add('formulario__grupo-incorrecto');
-                        document.getElementById('grupo__nombre').classList.remove('formulario__grupo-correcto');
-                        document.querySelector('#grupo__nombre .formulario__input-error').classList.add('formulario__input-activo');
-                    }
+                    validarCampo(expresiones.nombre, e.target, 'nombre');
                 break;
                 case "ciudad":
-                    
+                    validarCampo(expresiones.nombre, e.target, 'ciudad');
                 break;
                 case "nombre_repre":
-                    
+                    validarCampo(expresiones.nombre, e.target, 'nombre_repre');
                 break;
                 case "clasificacion":
                     
@@ -114,12 +112,27 @@
                     
                 break;
                 case "telefono":
-                    
+                    validarCampo(expresiones.telefono, e.target, 'telefono');
                 break;
                 case "correo":
-                    
+                    validarCampo(expresiones.correo, e.target, 'correo');
                 break;
             }
+        }
+
+        const validarCampo = (expresion, input, campo) =>{
+            if(expresion.test(input.value)){
+                        document.getElementById(`grupo__${campo}`).classList.remove('formulario__grupo-incorrecto');
+                        document.getElementById(`grupo__${campo}`).classList.add('formulario__grupo-formulario__grupo-correcto');
+                        document.querySelector(`#grupo__${campo} .formulario__input-error`).classList.remove('formulario__input-activo');
+                        campos[campo] = true;
+
+                    }else{
+                        document.getElementById(`grupo__${campo}`).classList.add('formulario__grupo-incorrecto');
+                        document.getElementById(`grupo__${campo}`).classList.remove('formulario__grupo-correcto');
+                        document.querySelector(`#grupo__${campo} .formulario__input-error`).classList.add('formulario__input-activo');
+                        campos[campo] = false;
+                    }
         }
 
         inputs.forEach((input) =>{
@@ -128,10 +141,14 @@
         })
 
         formulario.addEventListener('submit', (e) =>{
-            e.preventDefault();
+            
+
+            if(campos.nombre && campos.ciudad && campos.nombre_repre && campos.telefono && campos.correo){
+                formulario.submit();
+            }
         });
 
-    </script> -->
+    </script>
     
 </body>
 </html>
