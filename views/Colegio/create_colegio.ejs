@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .formulario__grupo-correcto .formulario__validacion-estado {
+	color: #1ed12d;
+	opacity: 1;
+}
+
+.formulario__grupo-incorrecto .formulario__label {
+	color: #bb2929;
+}
+
+.formulario__grupo-incorrecto .formulario__validacion-estado {
+	color: #bb2929;
+	opacity: 1;
+}
+
+.formulario__grupo-incorrecto .formulario__input {
+	border: 3px solid #bb2929;
+}
+
+.formulario__input-error {
+	font-size: 12px;
+	margin-bottom: 0;
+	display: none;
+}
+
+.formulario__input-error-activo {
+	display: block;
+}
+    </style>
+    <title>AGREGAR COLEGIO</title>
+</head>
+<body>
+    <div>
+        <script>
+
+        </script>
+        <form action="/save_c" method="POST" id="formulario">
+            <div id="grupo__nombre">
+                <label for="nombre" >Nombre</label>
+                <input type="text" id="nombre" name="nombre" tabindex="1">
+                <p class="formulario__input-error">El usuario tiene que ser de 4 a 16 dígitos y solo puede contener numeros, letras y guion bajo.</p>
+            </div>
+            <div id="grupo__ciudad">
+                <label for="nombre">Ciudad</label>
+                <input type="text" id="ciudad" name="ciudad" tabindex="1">
+            </div>
+            <div id="grupo__nombre_repre">
+                <label for="nombre">Nombre Representate</label>
+                <input type="text" id="nombre_repre" name="nombre_repre" tabindex="1">
+            </div>
+            <div id="grupo__clasificacion">
+                <label for="nombre">Clasificacion</label>
+                <input type="text" id="clasificacion" name="clasificacion" tabindex="1">
+            </div>
+            <div id="grupo__c_dane">
+                <label for="nombre">Codigo DANE</label>
+                <input type="text" id="c_dane" name="c_dane" tabindex="1">
+            </div>
+            <div id="grupo__telefono">
+                <label for="nombre">Telefono</label>
+                <input type="text" id="telefono" name="telefono" tabindex="1">
+            </div>
+            <div id="grupo__correo">
+                <label for="nombre">Correo</label>
+                <input type="text" id="correo" name="correo" tabindex="1">
+            </div>
+            <button type="submit" tabindex="5">Guardar</button>
+            <a href="/index_colegio">Cancelar</a>
+        </form>
+    </div>
+
+    <!-- <script>
+        const formulario = document.getElementById('formulario');
+        const inputs = document.querySelectorAll('#formulario input');
+
+        const expresiones = {
+            usuario: /^[a-zA-Z0-9\_\-]{4,16}$/, // Letras, numeros, guion y guion_bajo
+            nombre: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
+            password: /^.{4,12}$/, // 4 a 12 digitos.
+            correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
+            telefono: /^\d{7,14}$/ // 7 a 14 numeros.
+        }
+
+
+        const validarFormulario = (e) => {
+            switch (e.target.id) {
+                case "nombre":
+                    if(expresiones.usuario.test(e.target.value)){
+                        document.getElementById('grupo__nombre').classList.remove('formulario__grupo-incorrecto');
+                        document.getElementById('grupo__nombre').classList.add('formulario__grupo-formulario__grupo-correcto');
+
+                    }else{
+                        document.getElementById('grupo__nombre').classList.add('formulario__grupo-incorrecto');
+                        document.getElementById('grupo__nombre').classList.remove('formulario__grupo-correcto');
+                        document.querySelector('#grupo__nombre .formulario__input-error').classList.add('formulario__input-activo');
+                    }
+                break;
+                case "ciudad":
+                    
+                break;
+                case "nombre_repre":
+                    
+                break;
+                case "clasificacion":
+                    
+                break;
+                case "c_dane":
+                    
+                break;
+                case "telefono":
+                    
+                break;
+                case "correo":
+                    
+                break;
+            }
+        }
+
+        inputs.forEach((input) =>{
+            input.addEventListener('Keyup', validarFormulario);
+            input.addEventListener('blur', validarFormulario);
+        })
+
+        formulario.addEventListener('submit', (e) =>{
+            e.preventDefault();
+        });
+
+    </script> -->
+    
+</body>
+</html>

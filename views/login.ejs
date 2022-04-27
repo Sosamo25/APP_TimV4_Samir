@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Login</title>
+	<link rel="stylesheet" href="resources/css/style.css">
+	<link rel="stylesheet" href="resources/css/Login.css">
+</head>
+<body>
+
+	
+	<div className="inicio-body">
+
+		    <p>
+			<img class="Imagen_inicio" border-style= "none"></img>
+		    </p>
+
+		<form action="auth" method="POST" class= "Inicio-formulario">
+			<p>
+			<img class="logo_uao" border-style= "none"></img>
+		    </p>
+			<input class= "input" type="text" name="user" placeholder="User" autofocus required>
+			<p>
+			<input class= "input" type="password" name="pass" placeholder="Password" required>
+		    </p>
+			<input type="submit" class="btn_iniciar" value="Login">
+			
+		</form>
+		
+	
+
+	</div>	
+		
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+   <% if (typeof alert != "undefined")  { %>
+    <script>
+    Swal.fire({
+      title:'<%= alertTitle %>',
+      text:'<%= alertMessage %>',
+      icon:'<%= alertIcon %>',
+      showConfirmButton: <%= showConfirmButton %>,
+      timer: <%= timer %>
+    }).then(()=>{
+      window.location='/<%= ruta %>'
+    })
+    </script>
+  <% } %>
+	</div>
+</body>
+</html>
+		
+

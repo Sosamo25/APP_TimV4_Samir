@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../../public/css/Colegio.css" rel="stylesheet" type="text/css">
+    <title>COLEGIO</title>
+</head>
+<body>
+    <div class="Home-body">
+        <div class="Home-header">
+            <div class="Home-icono"> </div>
+            <div class="uao-logo"> </div>
+            <div class="Home-titleFont">PORTAL DE MERCADEO</div>
+            <div class='Home-Bell'> </div>
+            <div class="Home-User_name">Samir M.</div>
+        </div>
+
+
+        <div>
+            <a href="/create_colegio" >Agregar</a>  
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>NOMBRE</th>
+                        <th>CIUDAD</th>
+                        <th>NOMBRE REPRESENTANTE</th>
+                        <th>CLASIFICACION</th>
+                        <th>CODIGO DANE</th>
+                        <th>TELEFONO</th>
+                        <th>CORREO</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% results.forEach((nombre)=>{ %>
+                    <tr >
+                        <td><%= nombre.id %></td>
+                        <td><%= nombre.nombre %></td>
+                        <td><%= nombre.ciudad %></td>
+                        <td><%= nombre.nombre_repre %></td>
+                        <td><%= nombre.clasificacion %></td>
+                        <td><%= nombre.c_dane %></td>
+                        <td><%= nombre.telefono %></td>
+                        <td><%= nombre.correo %></td>
+                        <td>
+                            <a href="/edit_colegio/<%= nombre.id %>">editar</a>
+                            <a href="/delete_colegio/<%= nombre.id %>">borrar</a>
+                        </td>
+                    </tr>
+                    <% }) %>
+                </tbody>
+
+            </table>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,269 @@
+.Usuario_body{
+    top: 0px;
+    left: 0px;
+    width: 1120px;
+    height: 1120px;
+    background: #F0F0F0 0% 0% no-repeat padding-box;
+    opacity: 1;
+}
+
+
+.Usuarios_buscar{
+top: 450px;
+left: 101px;
+width: 600px;
+height: 54px;
+background: var(--blanco) 0% 0% no-repeat padding-box;
+background: #FFFFFF 0% 0% no-repeat padding-box;
+box-shadow: inset 0px 3px 6px #00000029, 0px 5px 6px #00000029;
+border-radius: 6px;
+opacity: 1;
+}
+.Usuarios_agregar{
+top: 135px;
+left: 230px;
+width: 100px;
+height: 30px;
+position: absolute;
+background-color: #e7e7e7; color: black;
+box-shadow: 0px 5px 6px #00000029;
+border-radius: 5px;
+opacity: 1;
+}
+
+
+.Usuarios_agregar_font{
+position: absolute;
+top: 464px;
+left: 744px;
+width: 73px;
+height: 27px;
+text-align: center;
+font: normal normal 600 20px/27px Segoe UI;
+letter-spacing: 2px;
+color: #000000;
+opacity: 1;
+}
+
+.Usuarios_dashboard{
+position: absolute;
+top: 260px;
+left: 0px;
+width: 1520px;
+height: 812px;
+background: var(--blanco) 0% 0% no-repeat padding-box;
+border: 1px solid var(--gris);
+background: #FFFFFF 0% 0% no-repeat padding-box;
+border: 1px solid #707070;
+border-radius: 5px;
+opacity: 1;
+}
+
+.Usuarios_title_init{
+    position: relative;
+    top: 0px;
+    left: 90px;
+    width: 50px;
+    height: 20px;
+    text-align: left;
+    font: normal normal 500 30px/30px Segoe UI;
+    color: #000000;
+    opacity: 1;
+    }
+
+
+    
+
+.Usuarios_icon_init{
+position: relative;
+top: 40px;
+left: 20px;
+width: 55px;
+height: 55px;
+background: transparent url('../Images/Icono_usuario_dash.png') 0% 0% no-repeat padding-box;
+box-shadow: 0px 5px 6px #00000029;
+opacity: 1;
+}
+
+.thead th {
+    background-color: #f8f8f8;
+    color: rgb(73, 73, 73);
+    font-size: medium;
+    font: normal normal 600 14px/17px Segoe UI;
+    letter-spacing: 0px;
+    color: #000000;
+}
+
+.Tabla_position{
+position: relative;
+top: 80px;
+left: 20px;
+}
+
+.Buscador_position{
+    position: relative;
+    top: 60px;
+    left: 20px;
+    }
+
+.th{
+font-size: small;
+}
+
+.Usuario_Base_Iconos{
+position: relative;
+top: 0px;
+left: 0px;
+width: 1520px;
+height: 162px;
+background: var(--blanco) 0% 0% no-repeat padding-box;
+border: 1px solid var(--gris);
+background: #FFFFFF 0% 0% no-repeat padding-box;
+border: 1px solid #707070;
+opacity: 0.8;
+}
+
+.Usuario_Icon_user{
+position: relative;
+top: 50px;
+left: 329px;
+width: 45px;
+height: 45px;
+background: transparent url('../Images/Icono_usuario.png') 0% 0% no-repeat padding-box;
+opacity: 0.5;
+}
+.Usuario_font_user{
+    position: absolute;
+    top: 90px;
+    left: 305px;
+    width: 45px;
+    height: 45px;
+    text-align: left;
+    font: normal normal 400 25px/33px Segoe UI;
+    letter-spacing: 0px;
+    color: #000000;
+    opacity: 1;
+}
+
+.Usuario_Caja_user{
+    top: 83px;
+    left: 492px;
+    width: 120px;
+    height: 100px;
+    background: #FFBFC1 0% 0% no-repeat padding-box;
+    box-shadow: 0px 5px 6px #00000029;
+    border-radius: 10px;
+    opacity: 0.5;
+}
+
+.Usuario_Icon_col{
+    position: absolute;
+    top: 50px;
+    left: 480px;
+    width: 45px;
+    height: 45px;
+    background: transparent url('../Images/Icono_colegio.png') 0% 0% no-repeat padding-box;
+    opacity: 0.5;
+    }
+    .Usuario_font_col{
+        position: absolute;
+        top: 90px;
+        left: 450px;
+        width: 93px;
+        height: 33px;
+        text-align: left;
+        font: normal normal 400 25px/33px Segoe UI;
+        letter-spacing: 0px;
+        color: #000000;
+        opacity: 1;
+    }
+    
+    .Usuario_Icon_pro{
+        position: absolute;
+        top: 55px;
+        left: 620px;
+        width: 45px;
+        height: 45px;
+        background: transparent url('../Images/icono_programa.png') 0% 0% no-repeat padding-box;
+        opacity: 0.5;
+        }
+        .Usuario_font_pro{
+            position: absolute;
+            top: 92px;
+            left: 590px;
+            width: 238px;
+            height: 33px;
+            text-align: left;
+            font: normal normal 400 25px/33px Segoe UI;
+            letter-spacing: 0px;
+            color: #000000;
+            opacity: 1;
+        }
+   .Usuario_Icon_pre{
+    position: absolute;
+    top: 58px;
+    left: 790px;
+    width: 45px;
+    height: 45px;
+    background: transparent url('../Images/Icono_pregunta.png') 0% 0% no-repeat padding-box;
+    opacity: 0.5;
+        }
+        .Usuario_font_pre{
+            position: absolute;
+            top: 92px;
+            left: 760px;
+            width: 107px;
+            height: 33px;
+            text-align: left;
+            font: normal normal 400 25px/33px Segoe UI;
+            letter-spacing: 0px;
+            color: #000000;
+            opacity: 1;
+        }
+        .Usuario_Icon_test{
+            position: absolute;
+            top: 56px;
+            left: 930px;
+            width: 45px;
+            height: 45px;
+            background: transparent url('../Images/Icono_test.png') 0% 0% no-repeat padding-box;
+            opacity: 0.5;
+                }
+                .Usuario_font_test{
+                    position: absolute;
+                    top: 92px;
+                    left: 920px;
+                    width: 41px;
+                    height: 33px;
+                    text-align: left;
+                    font: normal normal 400 25px/33px Segoe UI;
+                    letter-spacing: 0px;
+                    color: #000000;
+                    opacity: 1;
+                }
+
+                .Usuario_Icon_prosp{
+                    position: absolute;
+                    top: 58px;
+                    left: 1050px;
+                    width: 45px;
+                    height: 45px;
+                    background: transparent url('../Images/Icono_buscar.png') 0% 0% no-repeat padding-box;
+                    opacity: 0.5;
+                        }
+                        .Usuario_font_prosp{
+                            position: absolute;
+                            top: 94px;
+                            left: 1020px;
+                            width: 117px;
+                            height: 33px;
+                            text-align: left;
+                            font: normal normal 400 25px/33px Segoe UI;
+                            letter-spacing: 0px;
+                            color: #000000;
+                            opacity: 1;
+                        }
+
+
+
+

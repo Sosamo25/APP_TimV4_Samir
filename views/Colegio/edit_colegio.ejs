@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EDITAR COLEGIO</title>
+</head>
+<body>
+    <% if (nombre) { %>
+    <div>
+        <form action="/update_c" method="POST">
+            <input id="id" name="id" value="<%= nombre.id %>" hidden>
+            <div>
+                <label for="nombre" >Nombre</label>
+                <input type="text" id="nombre" name="nombre" value="<%= nombre.nombre %>" tabindex="1">
+            </div>
+            <div>
+                <label for="nombre">Ciudad</label>
+                <input type="text" id="ciudad" name="ciudad" value="<%= nombre.ciudad %>" tabindex="1">
+            </div>
+            <div>
+                <label for="nombre">Nombre Representate</label>
+                <input type="text" id="nombre_repre" name="nombre_repre" value="<%= nombre.nombre_repre %>" tabindex="1">
+            </div>
+            <div>
+                <label for="nombre">Clasificacion</label>
+                <input type="text" id="clasificacion" name="clasificacion" value="<%= nombre.clasificacion %>" tabindex="1">
+            </div>
+            <div>
+                <label for="nombre">Codigo DANE</label>
+                <input type="text" id="c_dane" name="c_dane" value="<%= nombre.c_dane %>" tabindex="1">
+            </div>
+            <div>
+                <label for="nombre">Telefono</label>
+                <input type="text" id="telefono" name="telefono" value="<%= nombre.telefono %>" tabindex="1">
+            </div>
+            <div>
+                <label for="nombre">Correo</label>
+                <input type="text" id="correo" name="correo" value="<%= nombre.correo %>" tabindex="1">
+            </div>
+            <button type="submit" tabindex="5">Guardar</button>
+            <a href="/index_colegio">Cancelar</a>
+        </form>
+    </div>
+    <% } %>
+</body>
+</html>

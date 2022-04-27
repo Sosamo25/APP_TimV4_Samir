@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../../public/css/pa.css" rel="stylesheet" type="text/css">
+    <title>Programa Academico</title>
+</head>
+<body>
+    <div class="Home-body">
+        <div class="Home-header">
+            <div class="Home-icono"> </div>
+            <div class="uao-logo"> </div>
+            <div class="Home-titleFont">PORTAL DE MERCADEO</div>
+            <div class='Home-Bell'> </div>
+            <div class="Home-User_name">Alejo</div>
+        </div>
+
+
+        <div>
+            <a href="/create_pa" >Agregar</a>  
+
+            <table>
+                <thead>
+                    <th>ID</th>
+                    <th>NOMBRE</th>
+                    <th>CICLO</th>
+                    <th>VERBAL</th>
+                    <th>MATEMATICO</th>
+                    <th>VISUALESPACIAL</th>
+                    <th>KINESICO</th>
+                    <th>MUSICAL</th>
+                    <th>INTRAPERSONAL</th>
+                    <th>INTERPERSONAL</th>
+                    <th>NATURALISTA</th>
+                </thead>
+                <tbody>
+                    <% results.forEach((nombre)=> { %>
+                    <tr>
+                        <td><%= nombre.numConsecutivo %></td>
+                        <td><%= nombre.nombre %></td>
+                        <td><%= nombre.ciclo %></td>
+                        <td><%= nombre.verbal %></td>
+                        <td><%= nombre.matematico %></td>
+                        <td><%= nombre.visualEspacial %></td>
+                        <td><%= nombre.kinesico %></td>
+                        <td><%= nombre.musical %></td>
+                        <td><%= nombre.intrapersonal %></td>
+                        <td><%= nombre.interpersonal %></td>
+                        <td><%= nombre.naturalista %></td>
+                        <td>
+                            <a href="/edit_pa/<%= nombre.numConsecutivo %>">editar</a>
+                            <a href="/delete_pa/<%= nombre.numConsecutivo %>">borrar</a>
+                        </td>
+                    </tr>
+                    <% }) %>
+                </tbody>
+
+            </table>
+        </div>
+    </div>
+</body>
+</html>
