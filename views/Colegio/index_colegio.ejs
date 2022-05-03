@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="../resources/css/Colegio.css" rel="stylesheet" type="text/css">
     <link href="../resources/css/Home.css" rel="stylesheet" type="text/css">
+    <link href="../resources/css/Navbar.css" rel="stylesheet" type="text/css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <title>COLEGIO</title>
 </head>
@@ -18,13 +19,45 @@
             <a href="logout" class="Home_logout">X Cerrar Sesión</a>
           </div>
 
+    <nav class="nav_bar">
+        
+            <a href="/" class="nav_tb">
+                <div class="img_User"> </div>
+                Usuario</a>
+
+            <a href="/index_colegio" class="nav_tb">
+                <div class="img_School"></div>
+                Colegio</a>
+     
+      
+            <a href="/index_pa" class="nav_tb"> 
+                <div class="img_CarreProfe"></div>
+                Programas</a>
+      
+     
+            <a href="#" class="nav_tb">
+                <div class="img_Pregun"></div>
+                Preguntas</a>
+     
+        
+            <a href="#" class="nav_tb">
+                <div class="img_Test"></div>
+                Test</a>
+      
+        
+            <a href="#" class="nav_tb">
+                <div class="img_Prospec"></div>
+                Prospectos</a>
+        
+    </nav>      
+          
 
         <div class="dashboard_list">
             <a href="/create_colegio" type="button" class="btn btn-primary">Agregar</a>  
 
             <div class="form_list">
 
-            <table class="table table-hover">
+            <table class="table table-hover table-bordered">
                 <thead class="table-dark">
                     <tr>
                         <th>ID</th>
@@ -51,12 +84,9 @@
                         <td><%= nombre.correo %></td>
                         <td>
                             <div class="d-grid gap-2 d-md-block">
-
-                                <a href="/edit_colegio/<%= nombre.id %>" class="btn btn-link"  role="button"><div class='img_edit'></div></a>
-                                <a href="/delete_colegio/<%= nombre.id %> " class="btn btn-link"  role="button"><div class='img_del'></div></a>
-
+                                <a href="/edit_colegio/<%= nombre.id %>" class="btn btn-link"  role="button"><div class="img_edit"></div></a>
+                                <a href="/delete_colegio/<%= nombre.id %> " class="btn btn-link"  role="button"><div class="img_del"></div></a>
                             </div>
-                           
                         </td>
                     </tr>
                     <% }) %>
