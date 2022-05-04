@@ -10,7 +10,6 @@
 </head>
 <body>
     
-    
     <div class="container mt-4">
         <div class="card border-secondary">
             <div class="card-header">Nuevo Registro Colegio</div>
@@ -18,32 +17,32 @@
         
         <form action="/save_c" method="POST" id="formulario">
             <div id="grupo__nombre" class="mb-3">
-                <label for="nombre" class="form-label">Nombre*</label>
+                <label for="nombre" class="form-label">Nombre</label>
                 <input type="text" id="nombre" class="form-control" name="nombre" tabindex="1">
                 <p class="formulario__input-error">El usuario tiene que ser de 4 a 16 dígitos y solo puede contener numeros, letras y guion bajo.</p>
             </div>
             <div id="grupo__ciudad" class="mb-3">
-                <label for="nombre" class="form-label">Ciudad*</label>
+                <label for="nombre" class="form-label">Ciudad</label>
                 <input type="text" id="ciudad" class="form-control" name="ciudad" tabindex="1">
             </div>
             <div id="grupo__nombre_repre" class="mb-3">
-                <label for="nombre" class="form-label">Nombre Representate*</label>
+                <label for="nombre" class="form-label">Nombre Representate</label>
                 <input type="text" id="nombre_repre" class="form-control" name="nombre_repre" tabindex="1">
             </div>
             <div id="grupo__clasificacion" class="mb-3">
-                <label for="nombre" class="form-label">Clasificacion*</label>
+                <label for="nombre" class="form-label">Clasificacion</label>
                 <input type="text" id="clasificacion" class="form-control" name="clasificacion" tabindex="1">
             </div>
             <div id="grupo__c_dane" class="mb-3">
-                <label for="nombre" class="form-label">Codigo DANE*</label>
+                <label for="nombre" class="form-label">Codigo DANE</label>
                 <input type="text" id="c_dane" class="form-control" name="c_dane" tabindex="1">
             </div>
             <div id="grupo__telefono" class="mb-3">
-                <label for="nombre" class="form-label">Telefono*</label>
+                <label for="nombre" class="form-label">Telefono</label>
                 <input type="text" id="telefono" class="form-control" name="telefono" tabindex="1">
             </div>
             <div id="grupo__correo" class="mb-3">
-                <label for="nombre" class="form-label">Correo*</label>
+                <label for="nombre" class="form-label">Correo</label>
                 <input type="text" id="correo" class="form-control" name="correo" tabindex="1">
             </div>
             <button type="submit" class="btn btn-primary" tabindex="5">Guardar</button>
@@ -53,9 +52,7 @@
     </div>
     </div>
 
-    
-
-    <!-- <script>
+    <script>
         const formulario = document.getElementById('formulario');
         const inputs = document.querySelectorAll('#formulario input');
 
@@ -64,7 +61,7 @@
             nombre: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
             password: /^.{4,12}$/, // 4 a 12 digitos.
             correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
-            telefono: /^\d{7,14}$/ // 7 a 14 numeros.
+            telefono: /^\d{7,20}$/ // 7 a 14 numeros.
         }
 
         const campos ={
@@ -128,7 +125,7 @@
             }
         });
 
-    </script> -->
+    </script>
     
 </body>
 </html>

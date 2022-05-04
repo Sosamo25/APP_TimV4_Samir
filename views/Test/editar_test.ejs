@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../resources/css/style.css">
+    <link rel="stylesheet" href="../resources/css/Crear_usuarios.css">
+    <title>EDITAR TEST</title>
+</head>
+<body>
+  <% if (test) { %>
+    <div class="register-form">
+		<h1 class="Registrar_font">Editar un Usuario</h1>
+		<form action="/update_te" method="POST" class="Registrar_font">
+        <input id="id" name="id" value="<%= test.id %>" hidden>
+    
+        <div class="mb-3">
+          <label for="test">Código único</label>
+          <input type="text" name="codigo_unico" value="<%= test.codigo_unico %>" required tabindex="1" autofocus> 
+        </div>
+
+        <div class="mb-3">
+            <label for="test">Colegio</label>
+            <input type="text" name="colegio" value="<%= test.colegio %>" required tabindex="2" autofocus>
+          </div>
+
+          <div class="mb-3">
+            <label for="test">Ciudad</label>
+            <input type="text" name="ciudad" value="<%= test.ciudad %>" required tabindex="3">
+          </div>
+
+      <div class="mb-3">
+        <select id="estado" name="estado" class="select-css" value="<%= test.estado %>" tabindex="4">
+          <option value="Abierto" selected>Abierto</option>
+          <option value="Cerrado">Cerrado</option>                    
+        </select>  
+      
+      <div class="mb-3">
+        <label for="test">Fecha de creación</label>
+        <input type="date" name="fecha_creacion" value="<%= test.fecha_creacion %>" required tabindex="5">
+      </div>
+      <br> 
+
+            <div style="display: inline;">             
+            <a href="/test" class="btn-cancel">Cancel</a><input type="submit" class="btn-save" value="Guardar">           
+        </div>
+    </form>		
+</div>
+
+        
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+</div>
+<% } %>
+</body>
+</html>

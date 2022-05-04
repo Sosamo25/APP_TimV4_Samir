@@ -1,43 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="../../public/css/pa.css" rel="stylesheet" type="text/css">
-    <link href="../resources/css/Home.css" rel="stylesheet" type="text/css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <title>Programa Academico</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">    
+  <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../resources/css/Home.css">
+    <link rel="stylesheet" href="../resources/css/Usuarios.css">
+    <title>Usuarios</title>
 </head>
-<body>
-    <div class="Home-body">
-        <div class="Home-header">
-            <img class="Home-icono" > </img>
-            <img class="uao-logo"></img>
-            <div class="Home-titleFont">PORTAL DE MERCADEO</div>                     
-            <a href="logout" class="Home_logout">X Cerrar Sesión</a>
-          </div>
+<body class="Usuario_body">
+  <div className="Home-body">
 
+    <div class="Home-header">
+      <img class="Home-icono" > </img>
+      <img class="uao-logo"></img>
+      <div class="Home-titleFont">PORTAL DE MERCADEO</div>
+      <a href="../login" class="Home_logout">X Cerrar Sesión</a>
+      <a href="../index" class="Home_volver">Home</a>
+    </div>
+      
+      
+    </div>
+    
+    <div class="Usuario_Base_Iconos">
+      <div class="Usuario_Icon_user"></div>
+      <div class="Usuario_font_user">Usuarios</div>
 
-        <div>
-            <a href="/create_pa" class="btn btn-primary">Agregar</a>  
+      <div class="Usuario_Icon_col"></div>
+      <div class="Usuario_font_col">Colegios</div>
 
+      <div class="Usuario_Icon_pro"></div>
+      <div class="Usuario_font_pro">Programas</div>
 
-        <div class="form_list">
-            <table class="table table-hover">
-                <thead class="table-dark">
-                    <th>ID</th>
-                    <th>NOMBRE</th>
-                    <th>CICLO</th>
-                    <th>VERBAL</th>
-                    <th>MATEMATICO</th>
-                    <th>VISUALESPACIAL</th>
-                    <th>KINESICO</th>
-                    <th>MUSICAL</th>
-                    <th>INTRAPERSONAL</th>
-                    <th>INTERPERSONAL</th>
-                    <th>NATURALISTA</th>
-                    <th></th>
+      <div class="Usuario_Icon_pre"></div>
+      <div class="Usuario_font_pre">Preguntas</div>
+
+      <div class="Usuario_Icon_test"></div>
+      <div class="Usuario_font_test">Tests</div>
+
+      <div class="Usuario_Icon_prosp"></div>
+      <div class="Usuario_font_prosp">Prospectos</div>
+    </div>
+
+      <div class="Usuarios_dashboard">  
+        
+      <div class="Usuarios_icon_init"></div>  
+      <div class="Usuarios_title_init">Programas Académicos</div>
+      <input class="Buscador_position" type="search" placeholder="Buscar" id="Buscador" />
+
+            <a href="/create_pa" class="Usuarios_agregar"class="Usuarios_agregar_font">Agregar</a>  
+
+            <table class="table-striped table-bordered table-striped text-left Tabla_position">
+                <thead class="thead th">
+                  <tr class="bg-primary">
+                    <th scope="col">ID</th>
+                    <th scope="col">NOMBRE</th>
+                    <th scope="col">CICLO</th>
+                    <th scope="col">VERBAL</th>
+                    <th scope="col">MATEMATICO</th>
+                    <th scope="col">VISUALESPACIAL</th>
+                    <th scope="col">KINESICO</th>
+                    <th scope="col">MUSICAL</th>
+                    <th scope="col">INTRAPERSONAL</th>
+                    <th scope="col">INTERPERSONAL</th>
+                    <th scope="col">NATURALISTA</th>
+                    <th scope="col">Acciones</th> 
+                  </tr>
                 </thead>
                 <tbody>
                     <% results.forEach((nombre)=> { %>
@@ -54,16 +83,15 @@
                         <td><%= nombre.interpersonal %></td>
                         <td><%= nombre.naturalista %></td>
                         <td>
-                            <a href="/edit_pa/<%= nombre.numConsecutivo %>">editar</a>
-                            <a href="/delete_pa/<%= nombre.numConsecutivo %>">borrar</a>
+                            <a href="/edit_pa/<%= nombre.numConsecutivo %>" class="btn btn-outline-info"><i class='bx bxs-edit'></i></a>
+                            <a href="/delete_pa/<%= nombre.numConsecutivo %>"class="btn btn-outline-danger"><i class='bx bxs-trash-alt' method="delete"></i></a>
                         </td>
-                    </tr>
-                    <% }) %>
+                    </tr>                                   
+                 <% }) %>
                 </tbody>
-
-            </table>
+              </table>
+              </div>
+           <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>    
+        </body>
         </div>
-        </div>
-    </div>
-</body>
-</html>
+        </html>

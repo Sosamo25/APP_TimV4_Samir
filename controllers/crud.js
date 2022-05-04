@@ -1,34 +1,51 @@
 //Invocamos a la conexion de la DB
 const connection = require('../database/db');
+const express = require('express');
+const bcryptjs = require("bcryptjs");
+const crud = express();
 
-//GUARDAR un REGISTRO
-exports.hola = (req, res)=>{
-    const user = req.body.user;
+//Usuarios
+exports.save_us = async (req, res)=>{
+    const documentType = req.body.documentType;
+	const Document = req.body.Document;
+	const user = req.body.user;
+	const name = req.body.name;
+	const lastName = req.body.lastName;
     const rol = req.body.rol;
-    connection.query('INSERT INTO users SET ?',{user:user, rol:rol}, (error, results)=>{
+	const pass = req.body.pass;
+	let passwordHash = await bcryptjs.hash(pass, 8);
+	const Title = req.body.Title;
+	const titleArea = req.body.titleArea;
+    connection.query('INSERT INTO users SET ?',{documentType:documentType, Document:Document, user:user, name:name, lastName:lastName, rol:rol, pass:passwordHash, Title:Title, titleArea:titleArea}, async (error, results)=>{
         if(error){
             console.log(error);
-
         }else{
-            //console.log(results);   
-            res.redirect('./users');         
+            res.redirect('/users');
         }
-});
+    })
+}
 
-};
-//ACTUALIZAR un REGISTRO
-exports.update = (req, res)=>{
+//Actualizar un usuario
+exports.update_us = async (req, res)=>{
     const id = req.body.id;
-    const user = req.body.user;
+    const documentType = req.body.documentType;
+	const Document = req.body.Document;
+	const user = req.body.user;
+	const name = req.body.name;
+	const lastName = req.body.lastName;
     const rol = req.body.rol;
-    connection.query('UPDATE users SET ? WHERE id = ?',[{user:user, rol:rol}, id], (error, results)=>{
+	const pass = req.body.pass;
+	let passwordHash = await bcryptjs.hash(pass, 8);
+	const Title = req.body.Title;
+	const titleArea = req.body.titleArea;
+    connection.query('UPDATE users SET ? WHERE id = ?', [{documentType:documentType, Document:Document, user:user, name:name, lastName:lastName, rol:rol, pass:passwordHash, Title:Title, titleArea:titleArea}, id], async (error, results)=>{
         if(error){
             console.log(error);
-        }else{           
-            res.redirect('/');         
+        }else{
+            res.redirect('/users');
         }
-});
-};
+    })
+}
 
 
 //Colegio
@@ -88,7 +105,7 @@ exports.save_pa = (req, res)=>{
         if(error){
             console.log(error);
         }else{
-            res.redirect('/');
+            res.redirect('/index_pa');
         }
     })
 }
@@ -114,3 +131,38 @@ exports.update_pa = (req, res)=>{
     })
     
 }
+
+
+//Test
+exports.save_te = (req, res)=>{
+    const codigo_unico = req.body.codigo_unico;
+    const colegio = req.body.colegio;
+    const ciudad = req.body.ciudad;
+    const estado = req.body.estado;
+    const fecha_creacion = req.body.fecha_creacion;
+
+    connection.query('INSERT INTO test SET ?', {codigo_unico:codigo_unico, colegio:colegio, ciudad:ciudad, estado:estado, fecha_creacion:fecha_creacion}, (error, results)=>{
+        if(error){
+            console.log(error);
+        }else{
+            res.redirect('/test');
+        }
+    })
+}
+
+exports.update_te = (req, res)=>{
+    const id = req.body.id;
+    const codigo_unico = req.body.codigo_unico;
+    const colegio = req.body.colegio;
+    const ciudad = req.body.ciudad;
+    const estado = req.body.estado;
+    const fecha_creacion = req.body.fecha_creacion;
+    connection.query('UPDATE test SET ? WHERE id = ?', [{codigo_unico:codigo_unico, colegio:colegio, ciudad:ciudad, estado:estado, fecha_creacion:fecha_creacion},id], (error, results)=>{
+        if(error){
+            console.log(error);
+        }else{
+            res.redirect('/test');
+        }
+    })
+}
+    

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">    
+  <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../resources/css/Home.css">
+    <link rel="stylesheet" href="../resources/css/Usuarios.css">
+    <title>Test</title>
+</head>
+<body class="Usuario_body">
+  <div className="Home-body">
+
+    <div class="Home-header">
+      <img class="Home-icono" > </img>
+      <img class="uao-logo"></img>
+      <div class="Home-titleFont">PORTAL DE MERCADEO</div>
+      <a href="../login" class="Home_logout">X Cerrar Sesión</a>
+      <a href="../index" class="Home_volver">Home</a>
+    </div>
+      
+      
+    </div>
+    
+    <div class="Usuario_Base_Iconos">
+      <div class="Usuario_Icon_user"></div>
+      <div class="Usuario_font_user">Usuarios</div>
+
+      <div class="Usuario_Icon_col"></div>
+      <div class="Usuario_font_col">Colegios</div>
+
+      <div class="Usuario_Icon_pro"></div>
+      <div class="Usuario_font_pro">Programas</div>
+
+      <div class="Usuario_Icon_pre"></div>
+      <div class="Usuario_font_pre">Preguntas</div>
+
+      <div class="Usuario_Icon_test"></div>
+      <div class="Usuario_font_test">Tests</div>
+
+      <div class="Usuario_Icon_prosp"></div>
+      <div class="Usuario_font_prosp">Prospectos</div>
+    </div>
+
+      <div class="Usuarios_dashboard">  
+        
+      <div class="Usuarios_icon_init"></div>  
+      <div class="Usuarios_title_init">Tests Histórico</div>
+      <input class="Buscador_position" type="search" placeholder="Buscar" id="Buscador" />
+      <a href="/crear_test" class="Usuarios_agregar"class="Usuarios_agregar_font">Agregar</a>      
+    
+      <table class="table-striped table-bordered table-striped text-left Tabla_position">
+        <thead class="thead th">
+          <tr class="bg-primary">
+            <th scope="col">Id</th>
+            <th scope="col">Código único</th>
+            <th scope="col">Colegio</th>
+            <th scope="col">Ciudad</th>
+            <th scope="col">Estado</th>   
+            <th scope="col">Fecha de creación</th>       
+            <th scope="col">Acciones</th>            
+          </tr>
+        </thead>
+        <tbody>
+          <% results.forEach((test)=>{ %>
+            <tr>  
+                <td><%= test.id %></td>
+                <td><%= test.codigo_unico %></td> 
+                <td><%= test.colegio %></td> 
+                <td><%= test.ciudad %></td>
+                <td><%= test.estado %></td>
+                <td><%= test.fecha_creacion %></td>
+
+                <td>
+                  <a href="/editar_test/<%= test.id %>" class="btn btn-outline-info"><i class='bx bxs-edit'></i></a>
+                  <a href="/delete_test/<%= test.id %>" class="btn btn-outline-danger"><i class='bx bxs-trash-alt' method="delete"></i></a>                   
+                </td>
+            </tr>                                   
+         <% }) %>
+        </tbody>
+      </table>
+      </div>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>    
+</body>
+</div>
+</html>

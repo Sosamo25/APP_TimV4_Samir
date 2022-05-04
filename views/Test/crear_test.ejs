@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../resources/css/style.css">
+    <link rel="stylesheet" href="../resources/css/Crear_usuarios.css">
+    <title>Crear Test</title>
+</head>
+<body>
+    <div class="register-form">
+		<h1 class="Registrar_font">Crear un test</h1>
+		<form action="/save_te" method="POST" class="Registrar_font">
+
+                <label for="test">Código único</label>
+                <input type="text" name="codigo_unico" required tabindex="2" autofocus> 
+
+                <label for="test">Colegio</label>
+                <input type="text" name="colegio" required tabindex="3" autofocus> 
+
+                <label for="test">Ciudad</label>
+                <input type="text" name="ciudad" required tabindex="4">
+
+                <select id="estado" name="estado" class="select-css" tabindex="5">
+                    <option value="Abierto" selected>Abierto</option>
+                    <option value="Cerrado">Cerrado</option>                    
+                  </select>
+
+                <label for="test">Fecha de Creación</label>
+                <input type="date" name="fecha_creacion" required tabindex="6">
+            
+
+            <div style="display: inline;">             
+            <a href="/test" class="btn-cancel">Cancel</a><input type="submit" class="btn-save" value="Guardar">           
+            </div>
+		</form>		
+	</div>
+
+    		
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+ </div>
+</body>
+</html>

@@ -4,81 +4,93 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Editar Programa Academico</title>
+    <link rel="stylesheet" href="../resources/css/style.css">
+    <link rel="stylesheet" href="../resources/css/Crear_usuarios.css">
+    <title>EDITAR PROGRAMA</title>
 </head>
 <body>
     <% if (nombre) { %>
-    <div>
+        <div class="register-form">
+        <h1 class="Registrar_font">Editar un Usuario</h1>
+
         <form action="/update_pa" method="POST">
             <input id="numConsecutivo" name="numConsecutivo" value="<%= nombre.numConsecutivo %>" hidden>
-            <div>
+            <div class="mb-3">
                 <label for="nombre" >Nombre</label>
                 <input type="text" id="nombre" name="nombre" value="<%= nombre.nombre %>" tabindex="1">
             </div>
-            <div>
+            <div class="mb-3">
                 <label for="nombre">Ciclo</label>
                 <input type="text" id="ciclo" name="ciclo" value="<%= nombre.ciclo %>" tabindex="1">
             </div>
-            <div>
+            <div class="mb-3">
                 <label for="nombre">Inteligencia Verbal</label>
                 <select id="verbal" name="verbal" value="" tabindex="2">
                     <option <%- nombre.verbal=='SI' ? "selected" : '' %> value="SI">Si</option>
                     <option <%- nombre.verbal=='NO' ? "selected" : '' %> value="NO">No</option>  
                   </select>
             </div>
-            <div>
+            <div class="mb-3">
                 <label for="nombre">Inteligencia Matematica</label>
                 <select id="matematico" name="matematico" value="" tabindex="2">
                     <option <%- nombre.matematico=='SI' ? "selected" : "" %> value="SI">Si</option>
                     <option <%- nombre.matematico=='NO' ? "selected" : "" %> value="NO">No</option>  
                   </select>
             </div>
-            <div>
+            <div class="mb-3">
                 <label for="nombre">Inteligencia Visual Espacial</label>
                 <select id="visualEspacial" name="visualEspacial" value="" tabindex="2">
                     <option <%- nombre.visualEspacial=='SI' ? "selected" : "" %> value="SI">Si</option>
                     <option <%- nombre.visualEspacial=='NO' ? "selected" : "" %> value="NO">No</option>  
                   </select>
             </div>
-            <div>
+            <div class="mb-3">
                 <label for="nombre">Inteligencia Kinesica</label>
                 <select id="kinesico" name="kinesico" value="" tabindex="2">
                     <option <%- nombre.kinesico=='SI' ? "selected" : "" %> value="SI">Si</option>
                     <option <%- nombre.kinesico=='NO' ? "selected" : "" %> value="NO">No</option>  
                   </select>
             </div>
-            <div>
+            <div class="mb-3">
                 <label for="nombre">Inteligencia Musical</label>
                 <select id="musical" name="musical" value="" tabindex="2">
                     <option <%- nombre.musical=='SI' ? "selected" : "" %> value="SI">Si</option>
                     <option <%- nombre.musical=='NO' ? "selected" : "" %> value="NO">No</option>  
                   </select>
             </div>
-            <div>
+            <div class="mb-3">
                 <label for="nombre">Inteligencia Intrapersonal</label>
                 <select id="intrapersonal" name="intrapersonal" value="" tabindex="2">
                     <option <%- nombre.intrapersonal=='SI' ? "selected" : "" %> value="SI">Si</option>
                     <option <%- nombre.intrapersonal=='NO' ? "selected" : "" %> value="NO">No</option>  
                   </select>
             </div>
-            <div>
+            <div class="mb-3">
                 <label for="nombre">Inteligencia Interpersonal</label>
                 <select id="interpersonal" name="interpersonal" value="" tabindex="2">
                     <option <%- nombre.interpersonal=='SI' ? "selected" : "" %> value="SI">Si</option>
                     <option <%- nombre.interpersonal=='NO' ? "selected" : "" %> value="NO">No</option>  
                   </select>
             </div>
-            <div>
+            <div class="mb-3">
                 <label for="nombre">Inteligencia Naturalista</label>
                 <select id="naturalista" name="naturalista" value="" tabindex="2">
                     <option <%- nombre.naturalista=='SI' ? "selected" : "" %> value="SI">Si</option>
                     <option <%- nombre.naturalista=='NO' ? "selected" : "" %> value="NO">No</option>  
                   </select>
             </div>
-            <button type="submit" tabindex="5">Guardar</button>
-            <a href="/index_pa">Cancelar</a>
-        </form>
-    </div>
-    <% } %>
+
+            <div style="display: inline;">             
+                <a href="/index_pa" class="btn-cancel">Cancel</a><input type="submit" class="btn-save" value="Guardar">           
+                </div>
+            
+		</form>		
+	</div>
+
+    		
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+ </div>
+ <% } %>
 </body>
 </html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../resources/css/style.css">
+    <link rel="stylesheet" href="../resources/css/Crear_usuarios.css">
+    <title>EDITAR USUARIOS</title>
+</head>
+<body>
+  <% if (user) { %>
+    <div class="register-form">
+		<h1 class="Registrar_font">Editar un Usuario</h1>
+		<form action="/update_us" method="POST" class="Registrar_font">
+
+      <input id="id" name="id" value="<%= user.id %>" hidden>
+      <div class="mb-3">
+        <select id="rol" name="documentType" class="select-css" value="<%= user.documentType %>" tabindex="1">
+          <option value="Cc" selected>Cédula</option>
+          <option value="Ti">Tarjeta de identidad</option>                    
+        </select>
+
+      </div>
+      <div class="mb-3">
+        <label for="user">Documento</label>
+        <input type="text" name="Document" value="<%= user.Document %>" required tabindex="2" autofocus> 
+      </div>
+      
+      <div class="mb-3">
+        <label for="user">Usuario</label>
+        <input type="text" name="user" value="<%= user.user %>" required tabindex="3" autofocus>
+      </div>
+
+      <div class="mb-3">
+        <label for="user">Nombres</label>
+        <input type="text" name="name" value="<%= user.name %>" required tabindex="4">
+      </div>
+
+      <div class="mb-3">
+        <label for="user">Apellidos</label>
+        <input type="text" name="lastName" value="<%= user.lastName %>" required tabindex="5">
+      </div>
+
+      <div class="mb-3">
+        <label for="rol">Perfil</label>                          
+                <select id="rol" name="rol" class="select-css" value="<%= user.rol %>" tabindex="6">
+                <option value="Administrador" selected>Administrador</option>
+                <option value="Evaluador">Evaluador</option>                    
+                </select>
+
+      </div>     
+      
+      <div class="mb-3">
+        <label for="pass">Contraseña</label>
+        <input type="password" name="pass" value="<%= user.pass %>" required tabindex="7">
+      </div>
+      <br> 
+
+      <div class="mb-3">
+        <label for="user">Cargo</label>
+        <input type="text" name="Title" value="<%= user.Title %>" required tabindex="8">
+
+      </div>
+      
+      <div class="mb-3">
+        <label for="user">Área del Cargo</label>
+        <input type="text" name="titleArea" value="<%= user.Title %>" required tabindex="9">
+
+      </div>
+
+            <div style="display: inline;">             
+            <a href="/users" class="btn-cancel">Cancel</a><input type="submit" class="btn-save" value="Guardar">           
+            </div>
+		</form>		
+	</div>
+
+    		
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+ </div>
+ <% } %>
+</body>
+</html>

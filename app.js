@@ -41,19 +41,14 @@ const connection = require('./database/db');
 	})
 
 	app.get('/register',(req, res)=>{
-		res.render('register');
+		res.render('./Usuarios/register');
 	})
-
-	app.use('/users', require('./router'));
 
 	app.use('/',require('./router'));
 
-
-	
-
-
-	app.get('/create', (req,res)=>{
-		res.render('create');
+	// Ruta Usuarios
+	app.get('/users', (req,res)=>{
+		res.render('./Usuarios/users');
 	})
 
 	app.get('/index', (req,res)=>{
@@ -70,36 +65,10 @@ const connection = require('./database/db');
 		res.render('./pa/index_pa');
 	})
 
-
-//10 - Método para Registrar
-app.post('/register', async (req, res)=>{
-	const documentType = req.body.documentType;
-	const Document = req.body.Document;
-	const user = req.body.user;
-	const name = req.body.name;
-	const lastName = req.body.lastName;
-    const rol = req.body.rol;
-	const pass = req.body.pass;
-	let passwordHash = await bcrypt.hash(pass, 8);
-	const Title = req.body.Title;
-	const titleArea = req.body.titleArea;
-    connection.query('INSERT INTO users SET ?',{documentType:documentType, Document:Document, user:user, name:name, lastName:lastName, rol:rol, pass:passwordHash, Title:Title, titleArea:titleArea}, async (error, results)=>{
-        if(error){
-            console.log(error);
-        }else{            
-			res.render('register', {
-				alert: true,
-				alertTitle: "Registration",
-				alertMessage: "¡Successful Registration!",
-				alertIcon:'success',
-				showConfirmButton: false,
-				timer: 1500,
-				ruta: ''
-			});
-            //res.redirect('/');         
-        }
-	});
-})
+	//Ruta Test
+	app.get('/test', (req,res)=>{
+		res.render('./Test/test.ejs');
+	})
 
 
 //11 - Metodo para la autenticacion
@@ -194,6 +163,6 @@ app.get('/logout', function (req, res) {
 });
 
 
-app.listen(3000, (req, res)=>{
-    console.log('SERVER RUNNING IN http://localhost:3000');
+app.listen(3001, (req, res)=>{
+    console.log('SERVER RUNNING IN http://localhost:3001');
 });
